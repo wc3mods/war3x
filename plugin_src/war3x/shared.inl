@@ -1310,13 +1310,7 @@ public War3x_GetSkillCheck( iLevel, iSkillLevel ) {
 	if ( iLevel >= GETSKILLCHECK[iSkillLevel - 1] )
 		return ( 1 );
 
-	else
-	{
-		return ( 0 );
-	}
-
-
-	return PLUGIN_HANDLED;
+	return ( 0 );
 }
 
 

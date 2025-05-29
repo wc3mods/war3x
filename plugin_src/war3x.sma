@@ -219,7 +219,7 @@ public client_putinserver( id ) {
 }
 
 
-public client_disconnect( id ) {
+public client_disconnected( id ) {
 
 	if ( !g_bWar3xEnabled )
 		return PLUGIN_CONTINUE;
