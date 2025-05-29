@@ -353,13 +353,13 @@ WAR3X_SETXP_LEVEL_CHANGE        = %s has set your %s character to level %d.
 
 ;Menu Titles ( please do not remove formatting ^n\w\y\r\R
 
-MENU_WAR3MENU_TITLE             = \yWarcraft 3 Menu ^n^n\w
-MENU_SELECTRACE_TITLE           = \ySelect Race ^n^n
-MENU_SELECTSKILLS_TITLE         = \ySelect Skills ^n
-MENU_BUYITEM_TITLE              = \yBuy Item \R$   Cost ^n^n
+MENU_WAR3MENU_TITLE             = \yWarcraft 3 Menuï¿½^n^n\w
+MENU_SELECTRACE_TITLE           = \ySelect Raceï¿½^n^n
+MENU_SELECTSKILLS_TITLE         = \ySelect Skillsï¿½^n
+MENU_BUYITEM_TITLE              = \yBuy Itemï¿½\R$   Cost ^n^n
 MENU_SKILLSINFO_TITLE           = \ySkills Info ^n^n\w
-MENU_PLAYEROPTIONS_TITLE        = \yPlayer Options ^n^n\w
-MENU_RACEOPTIONS_TITLE          = \yReset Options ^n
+MENU_PLAYEROPTIONS_TITLE        = \yPlayer Optionsï¿½^n^n\w
+MENU_RACEOPTIONS_TITLE          = \yReset Optionsï¿½^n
 MENU_ADMINOPTIONS_TITLE         = \yAdmin Options ^n^n\w
 
 ;Menu Options
