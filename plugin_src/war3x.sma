@@ -319,11 +319,15 @@ public plugin_init() {
 	register_menucmd( register_menuid( "BuyItem", 1 ),          (1<<0)|(1<<1), "on_BuyArmor"    );   // Buy Armor (old style)
 	register_menucmd(                             -34,          (1<<0)|(1<<1), "on_BuyArmor"    );   // Buy Armor (VGUI)
 
+	new szAmxCvar[64];
+	format( szAmxCvar, 63 , "%s %s", WAR3X_PLUGINNAME, WAR3X_VERSION );
 
 	// CVARS
-
-	register_cvar( "Warcraft_3_Expansion",      "", FCVAR_SERVER );
-	register_cvar( "Warcraft_3_Expansion_Date", "", FCVAR_SERVER );
+	register_cvar( "Warcraft_3_Expansion", WAR3X_VERSION, FCVAR_SERVER );
+	register_cvar( "Warcraft_3_Expansion_Date", WAR3X_DATE, FCVAR_SERVER );
+	register_cvar( "amx_war3_game", "war3x", FCVAR_SERVER );
+	register_cvar( "amx_war3_version", szAmxCvar, FCVAR_SERVER );
+	register_cvar( "amx_war3_date", WAR3X_DATE, FCVAR_SERVER );
 
 	CVAR_enabled            = register_cvar( "war3x_enabled",     "", FCVAR_SERVER );
 	CVAR_save_xp            = register_cvar( "war3x_save_xp",     "", FCVAR_SERVER );
