@@ -20,7 +20,7 @@ class BuildService
     @config_dir = File.join(@root, 'amxmodx')
     @asset_dir = File.join(@root, 'hl_assets')
     @util_dir = File.join(@root, 'utils')
-    @games = %w[cstrike czero dod]
+    @games = %w[cstrike czero]
   end
 
   def base_url
@@ -142,7 +142,7 @@ class BuildService
   end
 
   def copy_hl_assets
-    %w[sound sprites wc3.css].each do |entry|
+    %w[sound sprites war3x.css].each do |entry|
       src = File.join(@asset_dir, entry)
       dest = File.join(@build_tmp_dir, entry)
       FileUtils.cp_r(src, dest, remove_destination: true) if File.exist?(src) || Dir.exist?(src)
@@ -204,7 +204,7 @@ class BuildService
 
       # Update addons/amxmodx/config/plugins.ini to have war3x.amxx debug at the end of the file
       File.open(File.join(@amxx_dir, 'addons', 'amxmodx', 'configs', 'plugins.ini'), 'a') do |file|
-        file.puts "war3x.amxx"
+        file.puts "war3x.amxx debug"
       end
 
       # Enable required modules
@@ -212,13 +212,8 @@ class BuildService
       enable_module("engine")
       enable_module("fakemeta")
       enable_module("nvault")
-
-      if game == "cstrike" || game == "czero"
-        enable_module("cstrike")
-        enable_module("csx")
-      elsif game == "dod"
-        enable_module("dod")
-      end
+      enable_module("cstrike")
+      enable_module("csx")
 
       # Copy the correct liblist.gam
       src = File.join(@util_dir, game, 'liblist.gam')
