@@ -17,12 +17,12 @@ War3x (Warcraft 3 Expansion) is a powerful AMX MOD X plugin that transforms Coun
 
 ## Requirements
 
-- Counter-Strike server with AMX MOD X 1.75 or higher
+- Counter-Strike server with AMX MOD X 1.82 or higher
 - MetaMod
 
 ## Installation
 
-1. Download the latest version from [war3x.net](https://war3x.net)
+1. Download the latest version from [releases](https://github.com/wc3mods/war3x/releases/)
 2. Extract the files to your server's mod directory
 3. Configure the plugin settings in the config files
 4. Restart your server
