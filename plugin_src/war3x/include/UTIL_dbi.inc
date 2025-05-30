@@ -269,7 +269,7 @@ public write_mysql_all( szSaveId[32], szData[32], iRaceId, iXP, bUpdate ) {
 		}
 		else
 		{
-			formatex( mysqlQuery, 255, "INSERT DELAYED INTO `%s` VALUES ('%s', %d, %d, '%s', '%s')", g_mysqlTableName, szSaveId, iRaceId, iXP, szData, szLastPlayed );
+			formatex( mysqlQuery, 255, "INSERT INTO `%s` VALUES ('%s', %d, %d, '%s', '%s')", g_mysqlTableName, szSaveId, iRaceId, iXP, szData, szLastPlayed );
 		}
 	}
 	else
