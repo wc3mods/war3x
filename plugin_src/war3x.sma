@@ -81,6 +81,7 @@ new const WAR3X_PLUGINNAME_SHORT[] = "WAR3X";
 #include <fun>
 #include <engine>
 #include <dbi>
+#include <sqlx>
 
 // - Inline Inclusions ------------------------------------ //
 

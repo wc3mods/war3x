@@ -55,13 +55,14 @@ public mysql_init(){
 		return PLUGIN_CONTINUE;
 	}
 
-	new mysqlHost[64], mysqlUser[32], mysqlPass[32], mysqlDb[32], mysqlError[128];
+
+	new mysqlHost[64], mysqlUser[64], mysqlPass[64], mysqlDb[64], mysqlError[256];
 
 	get_pcvar_string( CVAR_sql_host,  mysqlHost,          63 );
-	get_pcvar_string( CVAR_sql_user,  mysqlUser,          31 );
-	get_pcvar_string( CVAR_sql_pass,  mysqlPass,          31 );
-	get_pcvar_string( CVAR_sql_db,    mysqlDb,        31 );
-	get_pcvar_string( CVAR_sql_table, g_mysqlTableName, 31 );
+	get_pcvar_string( CVAR_sql_user,  mysqlUser,          63 );
+	get_pcvar_string( CVAR_sql_pass,  mysqlPass,          63 );
+	get_pcvar_string( CVAR_sql_db,    mysqlDb,        63 );
+	get_pcvar_string( CVAR_sql_table, g_mysqlTableName, 63 );
 
 
 	// Set a default DB if it's SQLite and the user didn't supply one
@@ -73,7 +74,24 @@ public mysql_init(){
 
 	// Connect to SQL
 
-	sql = dbi_connect( mysqlHost, mysqlUser, mysqlPass, mysqlDb, mysqlError, 128 );
+	// This SQLX connection will not be used. But on Ubuntu 16 hlds will crash without it.
+	new szError[256], iErrNum;
+	new Handle:g_DBTuple = SQL_MakeDbTuple( mysqlHost, mysqlUser, mysqlPass, mysqlDb );
+	new Handle:g_DBConn = SQL_Connect( g_DBTuple, iErrNum, szError, 255 );
+
+	if ( !g_DBConn )
+	{
+		log_amx( "[MYSQLX] Database Connection Failed: [%d] %s", iErrNum, szError );
+	}
+	
+	sql = dbi_connect(mysqlHost, mysqlUser, mysqlPass, mysqlDb, mysqlError, 254)
+	log_amx("mysql_init 5.5");
+
+	if (sql < SQL_OK)
+	{
+		log_amx("Connection failure: %s", mysqlError)
+		return PLUGIN_CONTINUE
+	}
 
 	// Verify our database connection has worked
 	if ( !Check_DBI_Connection() )
@@ -88,7 +106,7 @@ public mysql_init(){
 	new szQuery[512];
 	if ( g_iSQLtype == SQL_MYSQL )
 	{
-		formatex( szQuery, 511, "CREATE TABLE IF NOT EXISTS `%s` ( `playerid` varchar(32) NOT NULL, `race` int(2) NOT NULL, `xp` int(10) default '0', `skills` varchar(32), `lastplayed` date default '0000-00-00', PRIMARY KEY  (`playerid`,`race`) ) TYPE=MyISAM;", g_mysqlTableName );
+		formatex( szQuery, 511, "CREATE TABLE IF NOT EXISTS `%s` ( `playerid` varchar(32) NOT NULL, `race` int(2) NOT NULL, `xp` int(10) default '0', `skills` varchar(32), `lastplayed` date default '0000-00-00', PRIMARY KEY  (`playerid`,`race`) );", g_mysqlTableName );
 	}
 	else if ( g_iSQLtype == SQL_SQLITE )
 	{
