@@ -85,7 +85,6 @@ public mysql_init(){
 	}
 	
 	sql = dbi_connect(mysqlHost, mysqlUser, mysqlPass, mysqlDb, mysqlError, 254)
-	log_amx("mysql_init 5.5");
 
 	if (sql < SQL_OK)
 	{
