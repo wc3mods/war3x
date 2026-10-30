@@ -2,6 +2,8 @@
 
 An AMX MOD X plugin that brings Warcraft 3 elements to Counter-Strike 1.6, enhancing gameplay with RPG features, special abilities, and unique races.
 
+Documentation: **[docs.war3x.net](https://docs.war3x.net)**
+
 ## Overview
 
 War3x (Warcraft 3 Expansion) is a powerful AMX MOD X plugin that transforms Counter-Strike gameplay by introducing Warcraft 3-inspired elements. Players can choose different races, level up, gain skills, and purchase items during matches.
@@ -45,7 +47,7 @@ On glibc 2.41+ (e.g. Ubuntu 26.04), Metamod cannot load AMX Mod X because its bi
 
 ## Commands
 
-(Note: Add specific commands once documented)
+See [Plugin Information](https://docs.war3x.net/plugin_information#commands) in the docs.
 
 ## Support
 
@@ -55,9 +57,7 @@ On glibc 2.41+ (e.g. Ubuntu 26.04), Metamod cannot load AMX Mod X because its bi
 
 ## Version History
 
-Current Version: 1.0.3 (Released: 8/2/2006)
-- Fixed crashing issues
-- Compiled for AMX MOD X 1.75
+See [releases](https://github.com/wc3mods/war3x/releases).
 
 ## Credits
 

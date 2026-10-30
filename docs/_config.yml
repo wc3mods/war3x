@@ -1,0 +1,10 @@
+title: War3x Docs
+remote_theme: just-the-docs/just-the-docs
+search_enabled: true
+baseurl: ""
+favicon_ico: "/favicon.ico"
+aux_links:
+  "War3x on GitHub":
+    - "https://github.com/wc3mods/war3x"
+  "war3x.net":
+    - "https://war3x.net"
