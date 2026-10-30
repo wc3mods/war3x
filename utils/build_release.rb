@@ -212,6 +212,7 @@ class BuildService
       enable_module("engine")
       enable_module("fakemeta")
       enable_module("nvault")
+      enable_module("mysql")
       enable_module("cstrike")
       enable_module("csx")
 
