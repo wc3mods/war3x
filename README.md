@@ -39,7 +39,7 @@ The plugin can be configured through various configuration files:
 
 Set `war3x_save_xp_sql 1` and the `war3x_sql_host`, `war3x_sql_user`, `war3x_sql_pass` and `war3x_sql_db` cvars, and uncomment `mysql` in `addons/amxmodx/configs/modules.ini` (bundles after v1.0.5 do this for you).
 
-War3x uses AMX Mod X's legacy DBI natives. On AMX Mod X 1.10 the stock mysql module crashes the server once such a login succeeds (`DatabaseInfo::charset` is left uninitialized in `dbi_connect`). A fix has been submitted to AMX Mod X; until it is released, use a mysql module built with the fix, or save XP with nVault.
+War3x uses AMX Mod X's legacy DBI natives, so saving XP to MySQL needs AMX Mod X [1.10.0.5488](https://github.com/alliedmodders/amxmodx/releases/tag/1.10.0.5488) or newer. Older 1.10 builds' mysql module crashes the server once such a login succeeds (`DatabaseInfo::charset` was left uninitialized in `dbi_connect`, fixed in [alliedmodders/amxmodx#1170](https://github.com/alliedmodders/amxmodx/pull/1170)). On an older build, take the mysql module from 5488 or save XP with nVault.
 
 ### Newer Linux distributions
 

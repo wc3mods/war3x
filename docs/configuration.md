@@ -58,7 +58,7 @@ Changes to `war3x.cfg` take effect on the next map.
 To use MySQL, set `war3x_save_xp_sql 1`, fill in the `war3x_sql_*` cvars, and enable `mysql` in `addons/amxmodx/configs/modules.ini`.
 
 {: .warning }
-War3x uses AMX Mod X's legacy DBI functions. With **AMX Mod X 1.10**, the stock mysql module crashes the server as soon as a War3x login succeeds (a bug in AMX Mod X's `dbi_connect`). A fix has been submitted to AMX Mod X; until it is released, use a mysql module built with the fix, or save experience in the vault (`war3x_save_xp_sql 0`).
+War3x uses AMX Mod X's legacy DBI functions, so saving to MySQL needs **AMX Mod X [1.10.0.5488](https://github.com/alliedmodders/amxmodx/releases/tag/1.10.0.5488) or newer**. On older 1.10 builds the mysql module crashes the server as soon as a War3x login succeeds (a bug in AMX Mod X's `dbi_connect`). On an older build, take the mysql module from 5488 or save experience in the vault (`war3x_save_xp_sql 0`).
 
 ## Voting and admin
 
