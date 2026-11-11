@@ -20,8 +20,8 @@ Each release has three kinds of zip. Pick the one that matches your AMX Mod X ve
 
 | Download | Contains | Use it when |
 |----------|----------|-------------|
-| `war3x-v1.0.5-cstrike-amxmodx-1.10.0-git5467.zip` (or `czero`) | War3x **plus** AMX Mod X and Metamod, already configured | You're setting up a new server. Extract it into your `cstrike` (or `czero`) folder and you're done; skip the rest of this page. |
-| `war3x-v1.0.5-plugin-amxmodx-1.10.0-git5467.zip` | Only War3x | You already run AMX Mod X. Follow the steps below. |
+| `war3x-v1.0.5-cstrike-amxmodx-1.10.0-git5488.zip` (or `czero`) | War3x **plus** AMX Mod X and Metamod, already configured | You're setting up a new server. Extract it into your `cstrike` (or `czero`) folder and you're done; skip the rest of this page. |
+| `war3x-v1.0.5-plugin-amxmodx-1.10.0-git5488.zip` | Only War3x | You already run AMX Mod X. Follow the steps below. |
 | `war3x-v1.0.5-client-files.zip` | Sounds and sprites | You want to host the files for fast downloads (sv_downloadurl). |
 
 {: .note }
